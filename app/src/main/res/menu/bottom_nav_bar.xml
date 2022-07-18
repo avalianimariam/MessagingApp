@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/bnbMenuHome"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:id="@+id/bnbMenuPlaceholder"
+        android:title=""/>
+
+    <item android:id="@+id/bnbMenuProfile"
+        android:title="Profile"
+        android:icon="@drawable/ic_settings"/>
+</menu>

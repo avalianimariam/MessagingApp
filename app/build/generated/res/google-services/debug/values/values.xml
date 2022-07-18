@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1023726880742-b0hhu88n83dklkaar2rjscomggbfk1s3.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1023726880742</string>
+    <string name="google_api_key" translatable="false">AIzaSyBXJBwGspB_GU_thbb1ZWsKoitJs0jlxXM</string>
+    <string name="google_app_id" translatable="false">1:1023726880742:android:df05845be415a8dd20b827</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBXJBwGspB_GU_thbb1ZWsKoitJs0jlxXM</string>
+    <string name="google_storage_bucket" translatable="false">messaging-app-3535d.appspot.com</string>
+    <string name="project_id" translatable="false">messaging-app-3535d</string>
+</resources>

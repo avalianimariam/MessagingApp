@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1023726880742",
+    "project_id": "messaging-app-3535d",
+    "storage_bucket": "messaging-app-3535d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023726880742:android:df05845be415a8dd20b827",
+        "android_client_info": {
+          "package_name": "ge.gabramishvilimavaliani.messagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023726880742-b0hhu88n83dklkaar2rjscomggbfk1s3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXJBwGspB_GU_thbb1ZWsKoitJs0jlxXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023726880742-b0hhu88n83dklkaar2rjscomggbfk1s3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
