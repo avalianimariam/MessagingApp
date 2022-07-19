@@ -131,9 +131,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!--    <include layout="@layout/message_content" />-->
-
-    <!--    <include layout="@layout/typing_layout" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_message_list"
