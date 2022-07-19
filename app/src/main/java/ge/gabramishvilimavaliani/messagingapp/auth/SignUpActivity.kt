@@ -86,8 +86,9 @@ class SignUpActivity : AppCompatActivity() {
         val uid = user!!.uid
 
         val profileMap: HashMap<String, Any> = HashMap()
+        profileMap["uid"] = uid
         profileMap["nickname"] = edtNickName.text.toString().trim()
-        profileMap["status"] = edtStatus.text.toString().trim()
+        profileMap["profession"] = edtStatus.text.toString().trim()
         profileMap["profileImage"] = uri
 
         mDatabase.child(uid).updateChildren(profileMap)

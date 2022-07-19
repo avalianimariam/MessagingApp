@@ -54,6 +54,7 @@
                     android:background="@drawable/edit_text_background"
                     android:gravity="center"
                     android:inputType="text"
+                    android:focusable="false"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:counterMaxLength="20" />
@@ -127,7 +128,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/loading_bar"
+        android:id="@+id/loadingBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

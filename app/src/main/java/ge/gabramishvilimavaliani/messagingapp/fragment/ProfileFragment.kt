@@ -57,7 +57,7 @@ class ProfileFragment : Fragment() {
             startActivityForResult(galleryIntent, GalleryPick)
         }
         btnUpdate.setOnClickListener {
-            loading_bar.visibility = VISIBLE
+            loadingBar.visibility = VISIBLE
             updateDatabase()
         }
         btnSignOut.setOnClickListener {
@@ -68,21 +68,21 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getUserData() {
-        loading_bar.visibility = VISIBLE
+        loadingBar.visibility = VISIBLE
         mDatabase.child(mAuth.uid.toString()).addValueEventListener(object :
             ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
-                    loading_bar.visibility = GONE
+                    loadingBar.visibility = GONE
                     val userNickName = snapshot.child("nickname").value.toString()
-                    val userStatus = snapshot.child("status").value.toString()
+                    val userStatus = snapshot.child("profession").value.toString()
                     val userProfileImage = snapshot.child("profileImage").value.toString()
                     edtNickName.setText(userNickName)
                     edtStatus.setText(userStatus)
                     Picasso.get().load(userProfileImage).placeholder(R.drawable.avatar_image_placeholder).into(circle_imageView)
                 }
                 if (!snapshot.exists()) {
-                    loading_bar.visibility = GONE
+                    loadingBar.visibility = GONE
                     edtNickName.setText("Enter your nickname")
                     edtStatus.setText("What I do")
                 }
@@ -101,7 +101,7 @@ class ProfileFragment : Fragment() {
         if (requestCode == GalleryPick && resultCode == AppCompatActivity.RESULT_OK && data != null) {
             imageUri = data.data!!
             circle_imageView.setImageURI(imageUri)
-            loading_bar.visibility = VISIBLE
+            loadingBar.visibility = VISIBLE
             updateImage()
         }
     }
@@ -111,7 +111,7 @@ class ProfileFragment : Fragment() {
         ref.putFile(imageUri!!)
             .continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
                 if (!task.isSuccessful) {
-                    loading_bar.visibility = GONE
+                    loadingBar.visibility = GONE
                     task.exception?.let {
                         throw it
                     }
@@ -126,7 +126,7 @@ class ProfileFragment : Fragment() {
                     profileMap["profileImage"] = downloadUri.toString()
                     mDatabase.child(uid).updateChildren(profileMap)
                         .addOnCompleteListener {
-                            loading_bar.visibility = GONE
+                            loadingBar.visibility = GONE
                             Toast.makeText(requireActivity(), "Profile Image updated successfully", Toast.LENGTH_SHORT).show()
                         }
                 } else {
@@ -143,12 +143,12 @@ class ProfileFragment : Fragment() {
 
         val profileMap: HashMap<String, Any> = HashMap()
         profileMap["nickname"] = edtNickName.text.toString().trim()
-        profileMap["status"] = edtStatus.text.toString().trim()
+        profileMap["profession"] = edtStatus.text.toString().trim()
 
 
         mDatabase.child(uid).updateChildren(profileMap)
             .addOnCompleteListener {
-                loading_bar.visibility = GONE
+                loadingBar.visibility = GONE
                 Toast.makeText(requireActivity(), "Profile updated successfully", Toast.LENGTH_SHORT).show()
             }
     }
