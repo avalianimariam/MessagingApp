@@ -38,6 +38,10 @@ class UsersActivity : AppCompatActivity() {
         init()
         getUsersData()
         searchFunction(searchPost)
+
+        back_arrow.setOnClickListener {
+            finish()
+        }
     }
 
     private fun init() {
@@ -67,11 +71,6 @@ class UsersActivity : AppCompatActivity() {
                         if (it.nickname!!.toLowerCase(Locale.getDefault()).contains(searchText)) {
                             textViewNoUser.visibility = View.GONE
                             tempUserArrayList.add(it)
-                        } else if ((it.nickname!!.toLowerCase(Locale.getDefault()) != searchText)){
-                            textViewNoUser.visibility = View.VISIBLE
-                            tempUserArrayList.clear()
-                        } else {
-                            textViewNoUser.visibility = View.GONE
                         }
                     }
                     userRecyclerview.adapter!!.notifyDataSetChanged()
