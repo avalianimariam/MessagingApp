@@ -147,6 +147,8 @@ class ChatFragment : Fragment() {
                         userRecyclerview.adapter = usersListAdapter
                     }
                     tempUserArrayList.addAll(userArrayList)
+                }else{
+                    userRecyclerview.adapter = UserChatAdapter(tempUserArrayList)
                 }
             }
             override fun onCancelled(error: DatabaseError) {

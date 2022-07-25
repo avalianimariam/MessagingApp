@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             android:background="@drawable/custom_search_background"
             android:gravity="center_vertical"
-            android:hint="Type a message"
+            android:hint="@string/message_input_hint"
             android:inputType="textCapSentences"
             android:padding="10dp"
             android:maxLines="5"
